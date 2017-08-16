@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Programming &middot; MINET X</title>
+		<meta charset="utf-8">
+		<meta name="author" content="The MINET Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+		<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="icon" type="image/png" href="img/icon.png">
+		<link rel="apple-touch-icon-precomposed" href="img/icon.png">
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=EB+Garamond" />
+		<meta name="theme-color" content="#2979ff">
+	</head>
+
+	<body>
+
+		<div class="container">
+			
+			<div class="row">
+				
+				<div class="three columns child">
+					
+					<header>
+						
+						<a href="#" class="handletter">MINET</a> 
+						<img class="logo" src="img/x.png"></img>
+
+					</header>
+
+					<div class="rounds-list">
+
+						<div class="list" id="round-two">
+							<span class="counter">01</span>
+							<p>Setup and Instructions</p>
+						</div>
+
+						<div class="list" id="round-three">
+							<span class="counter">02</span>
+							<p>Haskell Introduction</p>
+						</div>
+
+						<div class="list" id="round-four">
+							<span class="counter">03</span>
+							<p>Function Declaration</p>
+						</div>
+
+						<div class="list" id="round-five">
+							<span class="counter">04</span>
+							<p>Lists</p>
+						</div>
+
+						<div class="list" id="round-six">
+							<span class="counter">05</span>
+							<p>Recursion</p>
+						</div>
+						<div class="list" id="round-seven">
+							<span class="counter">06</span>
+							<p>Questions</p>
+							<i class="ion-ios-close-empty"></i>
+							<ul>
+								<li><a data-navigate="easy">Easy</a></li>
+								<li><a data-navigate="medium">Medium</a></li>
+								<li><a data-navigate="hard">Hard</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="nine columns child">
+
+					<div data-content="landing" class = "mainthing">
+					
+						<h1>Programming &middot; X 2017</h1>
+						<p class = "question">
+						Welcome to Day 2  of MINET X 2017.  We hope you have as much fun solving the problems as we had making them. Today you will be working  with Haskell. Haskell is a functional programming language. You  have been provided with the interpreter needed to solve the questions. <br><br>Whenever you wish to attempt a question, raise your hand and one of us will come to you. If you have any questions about the problems, feel free to ask. The scoring method followed is the same as yesterday. <b>Think-MAKE-Repeat.</b> Have fun.  Best of luck !
+						<br><br>
+						Functions play a prominent role in describing the semantics of a programming language, since the meaning of a computer program can be considered as a function from input values to output values. Haskell will help you explore a new paradigm of programming today. 
+						</p>
+
+
+					</div>
+
+
+					<div data-content="round-two">
+
+						<h1>Setup and Instructions</h1>
+
+						<div class="question">	
+						<p id="question">
+							You will find <span class="highlight change">WinHugs</span> program on your desktop screens. Today you will be working on those. Open it and explore.
+							<br><br>
+						The prompt <span class="highlight change">></span> means that the interpreter is ready to evaluate an expression.
+						</p><br>
+						<p class = "example">
+							Example
+						</p>
+						<div class = "box">
+							 > 2+3*4 <br>
+							 14 <br>
+							 > sqrt (3^2 + 4^2) <br>
+							 5.0
+						</div>
+						<div class = "dabba">
+							Interpreter
+						</div>
+						<p> When developing a Haskell script, it is useful to keep two windows open, one running an editor for the script, and the other running the interpreter.</p> <br>
+						<p> Start an editor, type in the following two function definitions, and save the script as <span class="highlight change">test.hs</span></p>
+						<div class = "box">
+							 double x	= x + x<br>
+							 quadruple x = double (double x)
+						</div>
+						<div class = "dabba">
+							Editor
+						</div>
+						<p>Open the file using the interpreter. Now both the standard library and the file <span class="highlight change">test.hs</span> are loaded, and functions from both can be used.</p>
+						<div class = "box">
+							 > quadruple 10<br>
+							 40 <br>
+							 > take (double 2) [1,2,3,4,5,6] <br>
+							 [1,2,3,4]
+						</div><div class = "dabba">
+							Interpreter
+						</div>
+						<p>Return to the editor, add the following definition, and resave.</p>
+						<div class = "box">
+							average ns  = div (sum ns) (length ns)<br>
+						</div>
+						<div class = "dabba">
+							Editor
+						</div>
+						<p>Here <span class="highlight change">div</span> is a predefined function that returns the quotient of the two operands.  It does not return float type values.</p><br>
+
+						<p>The interpreter does not automatically detect that the script has been edited, so a reload command must be executed before the new definitions can be used.</p>
+						<div class = "box">		
+							> :reload <br>
+							> average [1,2,3,4,5] <br>
+							3
+						</div>
+						<div class = "dabba">
+							Interpreter
+						</div>
+						<p>Haskell is case sensitive. Functions and argument names must begin with lowercase letter. Also by convention, list arguments usually have an <span style="font-family: consolas" >s</span> suffix. Double <span style="font-family: consolas">s</span> signifies a list of lists.</p><br>
+						<p class = "example">
+							Example
+						</p>
+						<p><span class="highlight change">
+							xs ns tss
+						</span></p> <br>
+						<p>
+							The layout rule
+						</p>
+						<div class = "box">
+							a = b + c <br>
+							 where b = 1 <br>
+							  &nbsp; &nbsp; &nbsp; c = 2 <br>
+							  &nbsp; &nbsp; &nbsp; d = a * 2
+						</div>
+						<div class = "dabba">
+							Notation
+						</div>
+						<p> Space is significant in the syntax.  Tabs are not accepted. </p> <br>
+						<p> You will also find <span class="highlight change">HELP.hs</span> on your desktops which is a collection of all the example functions you will come across in this document. Open the file using the interpreter and  use it for testing. In the file you will also find a list of predefined functions in the comments section which you can use to solve the questions faster. 
+						</p> <br>
+						<p>
+						When you  are attempting any question please write your code in a separate notepad file and save it with <span class="highlight change">*.hs</span> extension and then execute it using the interpreter.
+						</p>
+						<p> If you face any issues or have any queries, please don’t hesitate to ask. </p>
+						
+						</div>
+						
+					</div>
+
+					<div data-content="round-three">
+
+						<h1>Haskell Introduction</h1>
+
+						<div class="question">	
+						<p id="question">
+						 <h5> Functions </h5>
+						<p>
+							We deal with with functions everyday from simple addition to solving complex mathematical problems,  functions play an important role.
+						</p> <br>
+						<p>
+							A Function transform inputs to outputs working over a certain range of values called the domain of the function and giving a certain range of values called the range of the function. 
+						</p><br>
+						<p>
+							In programming, the programmes that we build can be thought of as functions  that convert the  given inputs  to desirable outputs.  
+						</p><br>
+						<center><img src = "img/inputoutput.png" height = 250 width = 320></center>
+						<p> <i>Haskell is a lazy functional programming language, the expressions are not evaluated until their results are actually needed.</i></p> <br>
+						<h5> Functional Programming </h5>
+						<p>Functional programming is a programming paradigm—a style of building the structures and elements of computer programs—that treat computation as the evaluation of mathematical functions and avoids changing-state and mutable data.</p> <br>
+						<p>So, when we write a program in a functional programming language, what we are doing is specifying the rules that describe how to generate a given output from a given input. And when we compute in a functional programming language, we apply these rules to the input that is given to us in order to actually produce the output that is expected. Haskell programs is centered around evaluating expressions rather than executing instructions. Thus, it is a <span style="font-family: consolas">functional</span> language</p>
+						<br>
+						<p class = "example"> Example </p>
+						<p>Summing the integers 1 to 10 in C++:</p>
+						<div class = "box">				
+						total = 0; <br>
+						for (i = 1; i <= 10; ++i) <br>
+						   total = total + i;
+						</div>
+						<div class = "dabba">
+							C++ Notation
+						</div>
+						<p style = "margin-top: 2%">The computation method is variable assignment. </p>
+						<p>It has mutable data i.e. i and totalare changing in each execution of the loop.</p><br>
+						<p>Summing the integers 1 to 10 in Haskell: </p>
+						<div class = "box">					
+						> sum [1..10] <br>
+						55 <br>
+						</div>
+						<div class = "dabba">
+							Interpreter
+						</div>
+						<p> The computation method is function application. </p> <br>
+
+
+						<h5> Function Application in Haskell </h5>
+						<p>Unlike in mathematics, function application have a  higher priority than other operators.</p>
+						<div class = "box">
+							f a + b<br>
+						</div>
+						<div class = "dabba">
+							Notations
+						</div>
+						<p>Means <span style="font-family: consolas">(f a) +  b</span>, rather than <span style="font-family: consolas">f(a + b)</span></p>
+						<div class = "box">										
+						f(a,b) + c.d  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp;--MATHEMATICAL NOTATION <br>
+						f a b + c*d  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; --HASKELL NOTATION  </span>
+						</div>
+						<div class = "dabba">
+							Notations
+						</div> 
+
+						</div>
+
+					</div>
+
+					<div data-content="round-four">
+
+						<h1>Types and Function Declaration</h1>
+
+						<div class="question">	
+						<p id="question">
+							In C++ whenever we declare any function we keep in mind the data types  of the parameters and always have a return type. Similarly in haskell every well formed has a type and whenever we build a function in functional language it is necessary to declare mapping from values of one type to values of another type.
+
+						</p> <br>
+						<p class = "example">
+							Example.
+						</p>
+						<div class = "box">
+							 
+							factorial :: Int -> Int <br>
+							factorial 0 = 1 <br>
+							factorial n = n * factorial (n-1)
+
+						</div>
+						<div class = "dabba">
+							Editor
+						</div>
+						<p> 
+							The factorial function takes an integer type value and return an integer. In haskell <span class="highlight change">::</span>  is used to show the data types a function works on.
+						</p> <br>
+						<p>
+							Haskell has a number of basic types
+						</p>
+						<ul style = "padding-left: 3%">
+							<li> <span style="font-family: consolas">Bool - logical values </span></li>
+							<li> <span style="font-family: consolas">Char - single characters </span></li>
+							<li> <span style="font-family: consolas">String - strings of characters </span></li>
+							<li> <span style="font-family: consolas">Int - fixed-precision integers </span></li>
+							<li> <span style="font-family: consolas">Integer - arbitrary-precision integers </span></li>
+							<li> <span style="font-family: consolas">Float - floating-point numbers </span></li>
+						</ul>
+
+						<p>
+							<span style="font-family: consolas">List</span> - a sequence of values of the same type. 
+						</p>
+						<p>
+							<span style="font-family: consolas">Tuple</span> - a sequence of values of different type.
+						</p>
+						<div class = "box">						 
+							> :type [’a’,’b’,’c’,’d’] <br>
+							['a','b','c'] :: [Char]  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp;&nbsp; --ListofCharacters
+						</div>
+						<div class = "dabba">
+							Interpreter
+						</div>
+						<p> <span class="highlight change">:type</span> calculates the type of an expression, without evaluating it. You will find a list of expressions with their return type on the <span class="highlight change">HELP.hs</span> document.</p> <br>
+
+
+
+						<h5> Currying </h5>
+						<p>See the following examples closely</p>
+						<div class = "box">						 			
+							add :: (Int,Int) -> Int &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;--EXAMPLE1 <br>
+							add (x,y)  = x+y <br><br>
+							add1 :: Int -> (Int -> Int)      --EXAMPLE2 <br>
+							add1 x y = x+y
+						</div><div class = "dabba">
+							Editor
+						</div>
+
+						<p> <span class="highlight change">add</span> and <span class="highlight change">add1</span> produce the same final result, but <span class="highlight change">add</span> takes its two arguments at the same time, whereas <span class="highlight change">add1</span> takes them one at a time. </p><br>
+						<p>	<span class="highlight change">add1</span> takes an integer <span class="highlight change">x</span> and returns a function <span class="highlight change">add1  x</span>.  In turn, this function takes an integer <span class="highlight change">y</span> and returns the result <span class="highlight change">x+y</span>. Functions that take their arguments one at a time are called curried functions. <p><br>
+						<p> Functions with more than two arguments can be curried by returning nested functions </p>
+						<div class = "box">						 			
+							mult :: Int -> Int -> Int -> Int <br>
+							mult x y z = x*y*z
+						</div>
+						<div class = "dabba">
+							Editor
+						</div>
+						<p>Excess parentheses are avoided when using curried functions </p>
+						<p style = "font-family: consolas">
+							Int -> Int -> Int -> Int <p/>means<br>
+						<p style = "font-family: consolas">
+							Int -> (Int -> (Int -> Int))
+						</p> <br>
+						<h5> Polymorphic and Overloaded functions </h5>
+							<p> A function is called polymorphic if its type contains one or more type variables. </p>
+						<div class = "box">
+							> :type length <br>
+							length :: [a] -> Int<br>
+						</div>
+						<div class = "dabba">
+							Interpreter
+						</div>
+						<p>For any type a, length takes a list of values of type a and returns an integer. Note that the data type start with an uppercase letter whereas the variable with a lowercase letter.</p>
+
+						<div class = "box">
+							> length [False,True] <br>
+							2 <br>
+							> length [1,2,3,4] <br>
+							4
+						</div>
+						<div class = "dabba">
+							Interpreter
+						</div>
+
+						<p>A polymorphic function is called overloaded if its type contains one or more class constraints.</p>
+						<div class = "box">				
+							> :type sum <br>
+							sum :: Num a  [a] -> a
+						</div>
+						<div class = "dabba">
+							Interpreter
+						</div>
+						<p>For any numeric type a, sum takes a list of values of type a and returns a value of type a.</p>
+						<div class = "box">				
+							> sum [1,2,3] <br>
+							6 <br>
+							> sum [1.1,2.2,3.3] <br>
+							6.6
+						</div>
+						<div class = "dabba">
+							Interpreter
+						</div>
+						<p>Haskell has a number of type classes </p>
+						<ul style = "padding-left: 3%">
+							<li> <span style="font-family: consolas">Num  - Numeric Types</span></li>
+							<li> <span style="font-family: consolas">Eq   - Equality Types </span></li>
+							<li> <span style="font-family: consolas">Ord  - Ordered Types </span></li>
+						</ul>
+						<p>More examples can be found in <span class="highlight change">HELP.hs</span></p><br>
+
+
+						<h5> Conditional Expression </h5>
+						<p> Functions can be defined using conditional expressions. </p>
+						<div class = "box">					
+							signum  :: Int -> Int <br>
+							signum n = <br>
+						 		if n < 0 then -1 else <br>
+						 		if n == 0 then 0 else 1
+						</div>
+						<div class = "dabba">
+							Editor
+						</div>
+						<p> In Haskell, conditional expressions must always have an else branch. </p> <br>
+						<p> As an alternative to conditionals, functions can also be defined using guarded equations. </p>
+						<div class = "box">					
+							signum1 n <br>
+							  | n < 0 = -1 <br>
+							  | n == 0	= 0 <br>
+							  | otherwise = 1
+						</div>
+						<div class = "dabba">
+							Editor
+						</div>
+
+						<h5> Pattern Matching </h5>
+						<p> Many functions have a particularly clear definition using pattern matching on their arguments. The <span class="highlight change">and</span> truth table can be written as what follows. </p>
+						<div class = "box">					
+							and :: Bool -> Bool -> Bool <br>
+							and True True = True <br>
+							and _ _ = False
+						</div>
+						<div class = "dabba">
+							Editor
+						</div>
+						<p> The underscore symbol <span class="highlight change">_</span> is a wildcard pattern that matches any other case i.e. False and True, False and False, True and False with the value False. </p>
+					</div>
+				</div>
+				
+				<div data-content="round-five">
+
+					<h1>Lists</h1>
+						<div class="question">
+							<p>In Haskell, lists are a homogenous data structure. It stores several elements of the same type. That means that we can have a list of integers or a list of characters but we can't have a list that has a few integers and then a few characters.</p><br>
+							<h5>List Patterns</h5>
+							<p>
+								Internally, every non-empty list is constructed by repeated use of an operator <span class="highlight change">:</span> that adds an element to the start of a list.
+							</p>
+							<div class = "box">					
+								[1,2,3,4]            &nbsp;           --Means 1:(2:(3:(4:[])))<br>                
+								[]                   &nbsp; &nbsp; &nbsp; &nbsp;       --IsUsedToRepresentEmptyLists
+							</div>
+							<div class = "dabba">
+								Notations
+							</div>
+
+							Functions on list can be defined using <span class="highlight change">x:xs</span> patterns.<br>
+							<div class = "box">					
+								head :: [a] -> a <br>
+								head (x:_)  = x <br> <br>
+								tail 	:: [a] -> [a]<br>
+								tail (_:xs) = xs
+							</div>
+							<div class = "dabba">
+								Notations
+							</div>
+							<p>More functions can be found in <span class="highlight change">HELP.hs</span></p> <br>
+
+							<h5>List Comprehension</h5>
+							<p>Haskell uses similar syntax as mathematical set notations to construct new lists.</p>
+							<p>Example</p><br>
+							<p style css>In mathematics</p>
+							<div class = "box">					
+								x <sup>2</sup> | x <- {1...5}}          --{1,4,9,16,25}
+							</div>
+							<div class = "dabba">
+								Notations
+							</div>
+							<p>This notation represents a set of all numbers <span style="font-family: consolas">x<sup>2</sup></span> such that  <span style="font-family: consolas">x</span> is an element of the set <span style="font-family: consolas">{1..5}</span>.</p><br>
+							<p>In haskell</p>
+							<div class = "box">					
+								> [x^2 | x <- [1..5]] <br>
+								[1,4,9,16,25]
+							</div>
+							<div class = "dabba">
+								Interpreter
+							</div>
+							<p>The expression <span class="highlight change"><-</span> is a list generator. A list can have multiple  generators.</p><br>
+							<div class = "box">					
+								> [(x,y) | x <- [1,2,3] , y <- [4,5]] <br>
+								[(1,4) , (1,5), (2,4), (2,5), (3,4), (3,5)]
+							</div>
+							<div class = "dabba">
+								Interpreter
+							</div>
+							<p>Multiple generators can be thought of as nested loops.</p>
+							<p>Later Generators can depend on variables that are introduced by earlier generators</p>
+							<div class = "box">					
+								> [(x,y) | x <- [1..3], y <- [x..3]] <br>
+								[(1,1),(1,2),(1,3),(2,2),(2,3),(3,3)]
+
+							</div>
+							<div class = "dabba">
+								Interpreter
+							</div>
+							<p>We can restrict the values produced in a list by having various conditions called guards. For instance:</p>
+							<div class = "box">					
+								factors :: Int -> [Int] <br>
+								factors n = [x | x <- [1..n],(mod n x) == 0]
+							</div>
+							<div class = "dabba">
+								Editor
+							</div>
+							<div class = "box">					
+								> factors 15 <br>
+								[1,3,5,15]
+
+							</div>
+							<div class = "dabba">
+								Interpreter
+							</div>
+
+
+							<h5> The Zip Function </h5>
+
+							<p>The zip function takes in two lists and combines each value with the other according to the index.</p>
+							<div class = "box">					
+								> :type zip<br>
+								zip :: [a] -> [b] -> [(a,b)] 
+							</div>
+							<div class = "dabba">
+								Interpreter
+							</div>
+							<div class = "box">					
+								> zip [‘a’ , ‘b’, ‘c’] [1,2,3,4] <br>
+								[(’a’,1),(’b’,2),(’c’,3)]
+							</div>
+							<div class = "dabba">
+								Interpreter
+							</div>
+
+
+							<h5> Map Function </h5>
+							<p>Map function  applies a function to each element of a list.</p>
+							<div class = "box">					
+								> type: map<br>
+								map :: (a -> b) -> [a] -> [b]
+							</div>
+							<div class = "dabba">
+								Interpreter
+							</div>
+							<div class = "box">					
+								> map (+1) [2,3,4,5] <br>
+								[3,4,5,6]
+
+							</div>
+							<div class = "dabba">
+								Interpreter
+							</div>
+							<p>We can define map in terms of list comprehensions.</p>
+							<div class = "box">					
+								M f xs = [f x | x <- xs]
+							</div>
+							<div class = "dabba">
+								Interpreter
+							</div>
+							<p>Examples of both the functions can be found in <span class="highlight change">HELP.hs</span></p><br>
+
+
+							<h5>String Comprehension</h5>
+							<p>A string is a sequence of characters enclosed in double quotes.  However, strings are represented as lists of characters therefore all functions defined for lists are defined for strings too.</p>
+							<div class = "box">					
+								> :type “abc” <br>
+								“abc” :: String <br><br>
+								> zip “abc” [1,2,3,4] <br>
+								[(’a’,1),(’b’,2),(’c’,3)]<br><br>
+								> length “abcdef”<br>
+								6 <br><br>
+								> "abc" ++ "cde"         --(++)UsedToAppend <br>
+								"abccde"
+							</div>
+							<div class = "dabba">
+								Interpreter
+							</div>
+						</div>
+					</div>
+
+					<div data-content="round-six">
+
+						<h1>Recursion</h1>
+
+						<div class="question">	
+						<p id="question">
+							The process in which a function calls itself directly or indirectly is called recursion and the corresponding function is known as a recursive function. The basic idea behind recursion can be divided into two important steps, the base case and the recursive step.
+						</p>
+						<ol style = "padding-left:3%">
+							<li>Each recursive call should be on a smaller instance of the same problem, that is, a smaller subproblem.</li>
+							<li>The recursive calls must eventually reach a base case, which is solved without further recursion.</li>
+						</ol>
+						<p>For example, the code to calculate the factorial would be</p>
+						<div class = "box">
+							factorial :: Int -> Int <br>
+							factorial 0 = 1 <br>
+							factorial n = n * factorial (n-1)
+						</div>
+						<div class = "dabba">
+							Editor
+						</div>
+						<p class="example"> 
+							Evaluation
+						</p>
+						<div class = "box">						 
+							  factorial 3 <br>
+							= 3 * factorial 2 <br>
+							= 3 * (2 * factorial 1) <br>
+							= 3 * (2 * (1 * factorial 0)) <br>
+							= 3 * (2 * (1 * 1)) <br>
+							= 3 * (2 * 1) <br>
+							= 3 * 2 <br>
+							= 6
+						</div>
+						<div class = "dabba">
+							Notation
+						</div>
+						<p> This function fails for values less than 0, as the second rule is violated and thus the base case is never reached.</p><br>
+						<p class = "codetext"><span class="highlight change">length</span> function thought of recursively</p>
+						<div class = "box">						 
+							length1 :: [a] -> Int <br>
+							length1 [] 	= 0 <br>
+							length1 (_:xs) = 1 + length xs
+						</div>
+						<div class = "dabba">
+							Editor
+						</div>
+
+						<p class = "codetext"><span class="highlight change">zip</span> function</p>
+						<div class = "box">						 
+							zip1 :: [a] -> [b] -> [(a,b)] <br>
+							zip1  []      _      = [] <br>
+							zip1   _     []     = [] <br>
+							zip1  (x:xs) (y:ys) = (x,y) : zip xs ys
+						</div>
+						<div class = "dabba">
+							Editor
+						</div>
+
+						<p class="example">Quicksort algorithm</p>
+						<ul style = "text-indent: 1em; padding-left: 2%">
+							<li>The empty list is already sorted.</li>
+							<li>Non-empty lists can be sorted by sorting the tail values  the head, sorting the tail values > the head, and then appending the resulting lists on either side of the head value.</li>
+						</ul>
+
+						<p class = "example">The principle behind quicksort
+						</p>
+						<ul style = "padding-left: 3%">
+							<li>Pick a pivot element, here it is the leftmost element.</li>
+							<li>“Partition” the array into 3 parts<br>
+								<ul style = "padding-left: 3%">
+									<li>All elements in this part are less than the pivot.</li>
+									<li> he pivot itself.</li>
+									<li>All elements in this part is greater than or equal to the pivot.</li>
+								</ul>
+							</li>
+							<li>Then, apply the quicksort algorithm to the first and the third part recursively.</li>
+						</ul>
+						<div class = "box">						 			
+							qsort    :: [Int] -> [Int] <br>
+							qsort [] = [] <br>
+							qsort (x:xs) = <br>
+							&emsp;qsort smaller ++ [x] ++ qsort larger <br>
+						    &emsp;where <br>
+						  	&emsp;&emsp;smaller = [a | a <- xs, a <= x] <br>
+						  	&emsp;&emsp;larger  = [b | b <- xs, b > x] <br>
+						</div>
+						<div class = "dabba">
+							Editor
+						</div>
+
+						<p>You will find a lot of examples of functions executed through recursion in <span class="highlight change">HELP.hs</span></p><br>
+						
+						</div>
+					</div>
+
+
+
+					<div data-content="round-seven">
+						<div id="easy">
+						<h1>Easy</h1>
+						
+							<div class="question">
+							<p id="question">
+								<strong>1 &nbsp;</strong>
+								Create a function to find the sum till n terms in the fibonacci series.
+								<div class = "box">						 			
+									> fibsum 3 <br>
+									4 
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">10</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>2 &nbsp;</strong>
+								Create a recursive function of the predefined function map.
+								<div class = "box">						 			
+									> mapper (==5) [1,3,5] <br>
+									[False,False,True]  
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">10</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>3 &nbsp;</strong>
+								Goldbach's conjecture says that every positive even number greater than 2 is the sum of two prime numbers. Example: 28 = 5 + 23. Write a predicate to find the list of two prime numbers that sum up to a given even integer. 
+								<div class = "box">						 			
+									> goldbach 28 <br>
+									[(5,23),(11,17)]
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">10</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>4 &nbsp;</strong>
+								Create a function which removes every nth element from a list. 
+								<div class = "box">						 			
+									> dropevery "abcdefghik" 3 <br>
+									"abdeghk"
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">10</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>5 &nbsp;</strong>
+								An integer is said to be a palindrome if it is equal to its reverse. For example, 121 and 34543 are palindromes. In this task you will be given an integer N, you must find the smallest integer M ≥ N such that M is a prime number and M is a palindrome.  
+								<div class = "box">						 			
+									> primePali 928 <br>
+									929
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">10</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>6 &nbsp;</strong>
+								Create a function which creates a list with the elements repeated n number of times. 
+								<div class = "box">						 			
+									> repli "abc" 3  <br>
+									"aaabbbccc"
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">10</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>7 &nbsp;</strong>
+								Create a function which splits a list into two parts where the length of the first part is given. You are not allowed to use any predefined predicates.
+								<div class = "box">						 			
+									> split "abcdefghik" 3 <br>
+									("abc", "defghik")
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">10</b>
+							</p>
+							</div>
+					</div>
+					<div id="medium">
+						<h1>Medium</h1>
+						
+							<div class="question">
+							<p id="question">
+								<strong>8 &nbsp;</strong>
+								Create a function which returns a slice of a list when the initial  and the final indices are given.
+								<div class = "box">						 			
+									> slice ['a','b','c','d','e','f','g','h','i','k'] 3 7 <br>
+									"cdefg"
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">20</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>9 &nbsp;</strong>
+								Create a recursive function that implements Bubble sort.
+								<div class = "box">						 			
+									> bubble [7,8,2,5,1] <br>
+									[1,2,5,7,8]
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">20</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>10 &nbsp;</strong>
+								Given a list, create a function which outputs a number n which tells all the possibilities of creating sublists of different, predefined lengths.
+								<div class = "box">						 			
+									> groups [2,2,5] ["a","b","c","d","e","f","g","h","i"] <br>
+									756  
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">20</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>11 &nbsp;</strong>
+								Find the number of ways that a given integer, x , can be expressed as the sum of the nth power of the unique natural numbers. 
+								<div class = "box">						 			
+									> findNums 10 2                            --10=X2+Y2 <br>
+									1                       --(10=11+32)onlyonewaypossible  
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">20</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>12 &nbsp;</strong>
+								Create a function which calculates the super digit of a number. The super digit of a number is defined as the super digit of the digit sum of a number x. If x is one digit, then that is the super digit of that number.
+								<div class = "box">						 			
+									> superdigit 9875 <br>
+									2  
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">20</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>13 &nbsp;</strong>
+								Create a function to shift the list n times to the left.
+								<div class = "box">						 			
+									> rotate ['a','b','c','d','e','f','g','h'] 3 <br>
+									"defghabc"
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">20</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>14 &nbsp </strong>
+								Given the cartesian coordinates of a polygon, create a function to finds its perimeter.
+								<div class = "box">						 			
+									> perimeter [(0,0),(0,1),(1,1),(1,0)] <br>
+									4
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">20</b>
+							</p>
+							</div>
+					</div>
+					<div id="hard">
+						<h1>Hard</h1>
+						
+							<div class="question">
+							<p id="question">
+								<strong>15 &nbsp;</strong>
+								Consider a Bowling Game where all pins are arranged in a horizontal line, instead of triangular formation. Two players have to play this game, and they alternate their turns. Whoever knocks down the last pin(s) will be declared the winner. One can knock down any single pin, or any two adjacent pins at one throw of a bowling ball. Your task is to predict the outcome i.e. WIN or LOSE of the given state of pins, considering that you bowl first. A configuration is represented by a string consisting of latin letters X and I, where I represents a position containing a pin, and X represents a position where a pin has been knocked down. An example of such a configuration is shown in the image below. Here  2nd pin has been knocked down already.
+								<center> <br> <img src = "img/bowling.png" height = 150 width = 600></center> <br>
+								<p>It's representation will be <span class = "codetext">IXIIIIIIIIIII</span>.</p><br>
+								<p>Create a function that will display the outcome i.e. WIN or LOSE.</p>
+								<div class = "box">						 			
+									> bowler IIXII <br>
+									LOSE <br>
+									> bowler IXIIIIIIIIIII <br>
+									WIN
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">50</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>16 &nbsp;</strong>
+								Write a function to which makes a list of all the permutations of its argument.(You may assume that the elements of this list are distinct.) For example, given the argument [1, 2, 3], the result should be a list consisting of the elements [1, 2, 3], [2, 1, 3], [2, 3, 1], [1, 3, 2], [3, 1, 2] and [3, 2, 1] in any order. 
+								<div class = "box">						 			
+									> perm [1,2,3] <br>
+									[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,2,1],[3,1,2]]
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">50</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>17 &nbsp;</strong>
+								A list ys is a generalised permutation of xs if ys is obtained by rearranging the elements of xs, where one element of xs is specially treated: it may appear any number of times (including zero) in ys. For example, [1,2,1] is a generalised permutation of [1,2] but [1,2,2,1] is not because two elements (1 and 2) appear the wrong number of times in it. Code an Haskell function to determine whether one list is a generalised permutation of another. 
+								<div class = "box">						 			
+									> isGenPerm ([1,2],[1,2,1]) <br>
+									True
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">50</b>
+							</p>
+							</div>
+							<div class="question">
+							<p id="question">
+								<strong>18 &nbsp;</strong>
+								Given a chessboard of dimension N x N, consider a Queen which has slightly modified move set. This Queen can be considered as a combination of a normal queen and a knight. Thus can move rowwise, columnwise, diagonally and also move in L-Shaped pattern i.e. 2 rows and 1 column or 2 columns and 1 row away from the initial position like a knight. Write a function that outputs total number of ways to place N Super-Queens on an N x N Chessboard such that none of the Super-Queens are in conflict with each other. Ignore the fact that some of these arrangements are reflections and rotations of each other: all of them count as unique positionings.
+								<div class = "box">						 			
+									> queen 10 <br>
+									4  
+								</div>
+								<div class = "questiondabba">
+									Interpreter
+								</div>
+								<br><b style="color:#696969;float:right;">50</b>
+							</p>
+							</div>
+						
+					</div>
+		</div>
+
+		<!-- <div class="question">
+			
+			<p id="question"><strong>1</strong> Trademarked Transaction</p>
+      		<form class="cryptx">
+				<input type="text" placeholder="Answer" name="answer" class="answer-box" autofocus autocomplete="off">
+				<input type="submit">
+			</form>
+
+		</div> -->
+
+		<!-- <script src="//use.typekit.net/dbe5tbi.js"></script>-->
+		<script>try{Typekit.load();}catch(e){}</script> 
+		<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<!-- 	<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script> -->
+
+		<script type="text/javascript">
+
+		$(".list").click(function() {
+			$(this).find("ul").slideDown();
+			$(this).find("i").css("display", "inline");
+		});
+		$(".list i").click(function(event) {
+			event.stopPropagation();
+			$(this).parent().find("ul").slideUp();
+			$(this).css("display", "none");
+		});
+		$(".list").click(function() {
+			var roundCount = $(this).attr('id');
+			$("div[data-content]").css("display", "none");
+			$('div[data-content=' + roundCount + ']').css("display", "block");
+		});
+
+		$(".list ul li").click(function() {
+			var difficulty = $(this).find("a").data("navigate");
+			var roundCount = $(this).parent().parent().attr('id');
+			$("div[data-content]").css("display", "none");
+			$('div[data-content=' + roundCount + ']').css("display", "block");
+			var id = '#' + difficulty;
+			$('div[data-content=' + roundCount + ']').find('div[id]').css("display", "none");
+			$('div[data-content=' + roundCount + ']').find(id).css("display", "block");
+			if (roundCount == "round-one") {
+				temp = "Round One &middot;";
+			} else if (roundCount == "round-two") {
+				temp = "Round Two &middot;";
+			} else if (roundCount == "round-three") {
+				temp = "Round Three &middot;";
+			} else if (roundCount == "round-four") {
+				temp = "Round Four &middot;";
+			} else if (roundCount == "round-five") {
+				temp = "Round Five &middot;";
+			}
+			var capitalized = difficulty[0].toUpperCase() + difficulty.substring(1);
+			var newText = temp + ' ' + capitalized;
+			$('div[data-content=' + roundCount + ']').find("h1").html(newText);
+		});
+		</script>
+	</body>
+</html>
